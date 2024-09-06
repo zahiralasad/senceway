@@ -19,7 +19,7 @@ require 'vendor/autoload.php';
 use PhpMqtt\Client\MQTTClient;
 use PhpMqtt\Client\ConnectionSettings;
 
-$brokerAddr  = 'localhost';
+$brokerAddr  = '192.168.0.32';
 $brokerPort  = 1883;
 $client   	 = 'test-publisher';
 $user    	 = 'PhpClient';
