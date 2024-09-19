@@ -1,20 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Home from './Home'
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <div className="App album bg-light">
-        {/* <Header /> */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+      <div className="container bg-dark text-info">
+        {/* <Header/> */}
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
       </div>
-      {/* <Footer /> */}
-    </BrowserRouter>
     </div>
   );
 }
