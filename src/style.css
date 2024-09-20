@@ -34,11 +34,6 @@
     display: block;
     margin-bottom: 5%;
     color: black;
+    border-radius: 7%;
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
