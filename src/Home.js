@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-// import mqtt from "mqtt";
+import mqtt from "mqtt";
 import { Link } from "react-router-dom";
 // import 'bootstrap/dist/css/bootstrap.css';
 import Switch from './componets/switch/Switch';
@@ -8,16 +8,23 @@ import "./style.css";
 
 function Home() {
     const [toggled, setToggled] = useState(false);
+    const [msg, setMsg] = useState("");
+
+    let client = mqtt.connect("ws://192.168.0.32:8083");
+    // let client = mqtt.connect("mqtt://192.168.0.32:1883");
     
-    // let client = mqtt.connect("mqtt://localhost");
-    
+    useEffect (() => {
+        client.on('connect', () => {
+            console.log('Connected');
+          });
+    })
     return (
         <div className="container body-area">
             <div className="pt-3 row">
                 <div className="grid-container text-center menu-items-area">
                     <div className="grid-item">
-                        <div className="py-1 border-bottom border-dark mb-2">Arduino Led</div>
-                            <Switch/>
+                        <div className="py-1 border-bottom border-dark mb-3">Arduino Led</div>
+                            <span className="pe-2 ">Off</span><Switch/><span className="ps-2">On</span>
                     </div>
                     <div className="grid-item">
                         <div className="py-1 border-bottom border-dark mb-2">Sensor 2</div>
