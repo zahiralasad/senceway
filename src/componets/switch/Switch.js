@@ -4,13 +4,21 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './switch.css';
 function Switch({dataSwitchToHome}) {
   const [toggled, setToggled] = useState(false);
-  console.log(toggled)
+  // console.log(toggled)
 
   const handleToggle = () => {
-    // console.log(toggled);
+    // console.log("before",toggled);
     setToggled(!toggled);
-    dataSwitchToHome(toggled);
+    
+
+    //
   }
+  useEffect(()=>{
+    // console.log("after",toggled);
+    dataSwitchToHome(toggled);
+  },[toggled]
+)
+  
 
   return (
       <button
